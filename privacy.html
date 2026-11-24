@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clip Machine Privacy Policy</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<nav><a href="index.html">Clip Machine</a><a href="terms.html">Terms of Service</a></nav>
+<h1>Privacy Policy</h1>
+<p class="meta">Effective November 24, 2026</p>
+
+<p>This policy explains what information Clip Machine ("the app") handles and how. Clip Machine is
+a self-hosted tool operated by Goldenline Solutions LLC ("we", "us"). It runs on a server we own and
+control. Its only user is the operator, who signs in with the operator's own TikTok, Instagram,
+Facebook and Google accounts so the app can publish videos to those accounts. The app has no public
+sign-up, no website accounts, no advertising, and no analytics or tracking.</p>
+
+<h2>What the app does</h2>
+<p>Clip Machine watches selected public Twitch streams (with the streamers' permission), finds
+highlight moments, edits them into short vertical videos with captions, and, after the operator
+approves each video, uploads it to the operator's own TikTok, Instagram and YouTube accounts.</p>
+
+<h2>Information the app accesses</h2>
+<p><strong>From the platforms the operator signs in to.</strong> When the operator connects an account,
+the platform issues OAuth access and refresh tokens. The app uses only the permissions it needs to
+upload videos:</p>
+<ul>
+  <li><strong>TikTok</strong> (<code>user.info.basic</code>, <code>video.upload</code>): the account's
+  TikTok user ID (open_id), the granted scopes, and tokens. Used to send finished videos to the
+  operator's TikTok drafts.</li>
+  <li><strong>Instagram and Facebook</strong> (<code>instagram_basic</code>,
+  <code>instagram_content_publish</code>, <code>pages_show_list</code>,
+  <code>pages_read_engagement</code>, <code>business_management</code>): the list of the operator's
+  Facebook Pages, the ID and username of the Instagram professional account linked to a Page, and a
+  Page access token. Used to find the operator's Instagram account and publish Reels to it.</li>
+  <li><strong>YouTube</strong> (<code>https://www.googleapis.com/auth/youtube.upload</code>): tokens
+  only. Used to upload videos to the operator's YouTube channel. The app does not read the
+  operator's videos, subscribers, comments, watch history, or any other YouTube or Google data.</li>
+</ul>
+<p>After each upload the app keeps the ID or link of the published post and any error message, so
+the operator can see what was posted.</p>
+<p><strong>From Twitch.</strong> Public stream video and audio, public chat messages (including
+chatters' public display names), and public viewer-made clip counts for the selected channels.
+Chat is held in memory to measure reactions and is not saved to disk. Stream video is kept in a
+rolling buffer of about two hours and then deleted automatically.</p>
+
+<h2>How information is used</h2>
+<ul>
+  <li>Platform data and tokens are used only to publish the operator's approved videos to the
+  operator's own accounts and to show the result of each upload. They are not used for advertising,
+  profiling, selling, or any purpose unrelated to that.</li>
+  <li>A short transcript of a candidate highlight and the matching public Twitch chat lines are sent
+  to Anthropic's Claude API to decide whether the moment is worth clipping and to write a title and
+  caption. No TikTok, Instagram, Facebook, YouTube or Google account data or tokens are ever sent
+  to Anthropic or to any AI model.</li>
+</ul>
+
+<h2>Storage and security</h2>
+<p>Everything is stored only on the operator's own server: tokens in a local file readable only by
+the app's service account, and clip details and post results in a local database. Data is sent only
+to the platform it belongs to (for example, a YouTube token is sent only to Google) over encrypted
+HTTPS connections. The review page used to approve clips is password protected and is reachable only from the
+operator's private network.</p>
+
+<h2>Sharing</h2>
+<p>We do not sell, rent, or share information received from TikTok, Meta, or Google with anyone.
+It is not transferred to third parties, used for advertising, or used to train AI or machine
+learning models. The only outside services involved are the platforms themselves (to receive
+uploads) and Anthropic (which receives public Twitch transcript and chat text only, as described
+above).</p>
+
+<h2>Google API Services and YouTube</h2>
+<p>Clip Machine's use and transfer to any other app of information received from Google APIs will
+adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API
+Services User Data Policy</a>, including the Limited Use requirements. The app uses YouTube API
+Services; by connecting a YouTube account you are also subject to the
+<a href="https://policies.google.com/privacy">Google Privacy Policy</a>. You can revoke the app's
+access to your Google account at any time at
+<a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+
+<h2>Retention</h2>
+<ul>
+  <li>Twitch stream buffer: deleted automatically after about two hours.</li>
+  <li>Platform tokens: kept until the operator disconnects the account or deletes them; replaced
+  each time the account is reconnected.</li>
+  <li>Finished clips and post records: kept on the operator's server until the operator deletes them.</li>
+</ul>
+
+<h2 id="data-deletion">Data deletion and revoking access</h2>
+<p>To remove the app's access and delete stored data:</p>
+<ol>
+  <li>Revoke access on each platform:
+    <ul>
+      <li>Google / YouTube: <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a></li>
+      <li>Facebook / Instagram: Facebook Settings &rsaquo; Security and login &rsaquo; Business
+      integrations (or Apps and websites), then remove Clip Machine</li>
+      <li>TikTok: Settings and privacy &rsaquo; Security &rsaquo; Apps and services, then remove Clip Machine</li>
+    </ul>
+  </li>
+  <li>Email <a href="mailto:goldenlinesolutionsllc0@gmail.com">goldenlinesolutionsllc0@gmail.com</a>
+  with the subject "Delete my data". We will delete all tokens and account details we hold for that
+  account from the server within 30 days and confirm by email.</li>
+</ol>
+
+<h2>Children</h2>
+<p>The app is not directed at children and does not knowingly collect information from anyone
+under 13.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the updated version will be posted on this page with a new effective date.</p>
+
+<h2>Contact</h2>
+<p>Goldenline Solutions LLC &middot;
+<a href="mailto:goldenlinesolutionsllc0@gmail.com">goldenlinesolutionsllc0@gmail.com</a></p>
+</main></body></html>
